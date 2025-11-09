@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Calculator, Weight, Scale, Goal } from "lucide-react";
+import { Calculator } from "lucide-react";
 
 const goals = [
   { key: "fat_loss", label: "Fat Loss" },

@@ -84,12 +84,13 @@ export default function PlanResult({ data }) {
   if (!data) return null;
 
   const foods = foodSuggestions(data.dietary);
+  const title = data.name ? `${data.name}, here's your plan` : "Here's your plan";
 
   return (
     <section className="mx-auto max-w-6xl px-4 pb-20">
       <div className="rounded-2xl ring-1 ring-slate-200 overflow-hidden">
         <div className="bg-gradient-to-r from-indigo-600 to-purple-600 p-6 text-white">
-          <h3 className="text-2xl font-bold">{data.name ? `${data.name}, h` : "H"}ere's your plan</h3>
+          <h3 className="text-2xl font-bold">{title}</h3>
           <p className="text-white/80">Calories and macros tailored to your goal.</p>
         </div>
         <div className="bg-white p-6 grid md:grid-cols-3 gap-6">
@@ -109,7 +110,7 @@ export default function PlanResult({ data }) {
                   "Black coffee or green tea",
                 ]} />
                 <Meal title="Lunch" items={[
-                  `${foods.proteins[1] || foods.proteins[0]} + ${foods.carbs[1]} + salad with olive oil",
+                  `${foods.proteins[1] || foods.proteins[0]} + ${foods.carbs[1]} + salad with olive oil`,
                 ]} />
                 <Meal title="Snack" items={[
                   `${foods.proteins[2] || foods.proteins[0]} + ${foods.carbs[4]}`,
